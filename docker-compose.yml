@@ -25,7 +25,7 @@ services:
         tsig_key: NDyxQCyo2mc4rZGqzQKvq5GsHwYsC5WME1oPTkOXDPEEHChIec+3qiwYS4PY+2UdFJ2gNpB3fQDX3NKtP28nzw==
         auth_username: admin
         auth_password: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
-        auth_token_expires_in_minutes: 40
+        auth_token_expires_in_minutes: 120
         server_port: 80
     ports:
       - 8081:80
