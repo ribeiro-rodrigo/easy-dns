@@ -11,10 +11,10 @@ create-react-app junto com a versão v11.15.0 do NodeJS.
 
 
 ## Easy-dns-api 
-Aplicação Python3 que realiza a interface de comunicação entre a aplicação web e o servidor DNS. Foi utilizada a versão 3.7 do Python
+Aplicação Python3 que realiza a interface de comunicação entre a aplicação web e o servidor DNS. Foi utilizada a versão 3.7 do Python. 
 junto com o PipEnv para gerenciamento de dependências. 
 
-As configurações do projeto são lidas pela aplicação através de variaveis de ambiente, porem em ambiente de desenvolvimento, também 
+As configurações do projeto são lidas pela aplicação através de variaveis de ambiente, porém em ambiente de desenvolvimento, também 
 é possível adicionar um arquivo de configuração config.ini na raiz do projeto. 
 O projeto necessita de uma chave TSIG para realizar as alterações no servidor DNS, a mesma deverá estar associda ao domínio utilizado. 
 
