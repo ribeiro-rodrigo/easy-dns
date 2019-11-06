@@ -57,3 +57,38 @@ docker-compose build
 ```shell
 docker-compose up
 ```
+## Validando a solução 
+O projeto foi testado realizando as alterações pela interface gráfica e pela API e posteriormente realizando as querys diretamente no servidor DNS conforme mostra o exemplo abaixo. 
+
+```shell
+dig @167.71.166.167 host1.test.example.com A +answer
+
+; <<>> DiG 9.10.3-P4-Debian <<>> @167.71.166.167 host1.test.example.com A +answer
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 33662
+;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;host1.test.example.com.		IN	A
+
+;; ANSWER SECTION:
+host1.test.example.com.	300	IN	A	201.17.89.171
+
+;; AUTHORITY SECTION:
+test.example.com.	604800	IN	NS	ns2.test.example.com.
+test.example.com.	604800	IN	NS	ns1.test.example.com.
+
+;; ADDITIONAL SECTION:
+ns1.test.example.com.	604800	IN	A	167.71.166.167
+ns2.test.example.com.	604800	IN	A	167.71.166.167
+
+;; Query time: 124 msec
+;; SERVER: 167.71.166.167#53(167.71.166.167)
+;; WHEN: Wed Nov 06 16:48:02 -02 2019
+;; MSG SIZE  rcvd: 135
+
+```
