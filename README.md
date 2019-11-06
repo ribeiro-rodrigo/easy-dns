@@ -35,6 +35,8 @@ Servidor DNS utilizado para armazenar os registros do domínio. Foi criado um ar
 
 ## Arquitetura
 
+![alt text](https://raw.githubusercontent.com/ribeiro-rodrigo/easy-dns/master/easy-dns.png)
+
 ## Baixando o projeto 
 O projeto agrupa todos os submodulos listados acima, é possível baixar todos utilizando o comando de clonagem recursiva 
 exemplificado abaixo.
@@ -46,3 +48,11 @@ git clone --recursive https://github.com/ribeiro-rodrigo/easy-dns
 O projeto foi testado em servidores Bedian 9, porém para fins práticos, foi disponibilizado um ambiente Docker Compose onde é possível
 executar toda a solução com o objetívo de validação com apenas poucos comandos. Foi utilizada a versão 18.09.6, build 481bc77
 do Docker e a versão 1.24.1, build 4667896b do Docker Compose. 
+
+```shell
+docker-compose build 
+```
+
+```shell
+docker-compose up
+```
