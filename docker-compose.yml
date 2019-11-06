@@ -37,8 +37,8 @@ services:
   bind9:
     build: ./bind9
     ports:
-      - 56:53
-      - 56:53/udp
+      - 53:53
+      - 53:53/udp
     networks:
       easy-dns-network:
         ipv4_address: 173.18.0.14
