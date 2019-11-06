@@ -16,6 +16,7 @@ junto com o PipEnv para gerenciamento de dependências.
 
 As configurações do projeto são lidas pela aplicação através de variaveis de ambiente, porem em ambiente de desenvolvimento, também 
 é possível adicionar um arquivo de configuração config.ini na raiz do projeto. 
+O projeto necessita de uma chave TSIG para realizar as alterações no servidor DNS, a mesma deverá estar associda ao domínio utilizado. 
 
 ```
 [dns]
