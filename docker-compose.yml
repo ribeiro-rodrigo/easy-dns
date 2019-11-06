@@ -1,0 +1,44 @@
+version: "3"
+networks:
+  easy-dns-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: "173.18.0.0/16"
+
+services:
+  ui:
+    build: ./easy-dns-ui
+    networks:
+      - easy-dns-network
+    ports:
+      - 8080:80
+    depends_on:
+      - api
+  api:
+    build:
+      context: ./easy-dns-api
+      args:
+        dns_server_host: bind9
+        dns_avaliable_zones: "['test.example.com']"
+        dns_connection_timeout: 5
+        tsig_key: NDyxQCyo2mc4rZGqzQKvq5GsHwYsC5WME1oPTkOXDPEEHChIec+3qiwYS4PY+2UdFJ2gNpB3fQDX3NKtP28nzw==
+        auth_username: admin
+        auth_password: 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+        auth_token_expires_in_minutes: 40
+        server_port: 80
+    ports:
+      - 8081:80
+    networks:
+      - easy-dns-network
+    depends_on:
+      - bind9
+
+  bind9:
+    build: ./bind9
+    ports:
+      - 56:53
+      - 56:53/udp
+    networks:
+      easy-dns-network:
+        ipv4_address: 173.18.0.14

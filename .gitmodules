@@ -1,0 +1,9 @@
+[submodule "easy-dns-api"]
+	path = easy-dns-api
+	url = https://github.com/ribeiro-rodrigo/easy-dns-api.git
+[submodule "easy-dns-ui"]
+	path = easy-dns-ui
+	url = https://github.com/ribeiro-rodrigo/easy-dns-ui.git
+[submodule "bind9"]
+	path = bind9
+	url = https://github.com/ribeiro-rodrigo/bind9-docker-image.git
